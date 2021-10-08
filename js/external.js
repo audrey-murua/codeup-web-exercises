@@ -33,20 +33,15 @@ var paycheckTotal = googleTotal +  amazonTotal + facebookTotal;
 alert("Your total paycheck is " + paycheckTotal);
 
 
-
 var classNotFull = confirm("Does the classroom have room?");
 console.log(classNotFull);
 
 var scheduleNoConflict = confirm("Do you have availability at 9am?");
 console.log(scheduleNoConflict);
 
-var enrolled = alert("Great! You're enrolled in the class!");
-console.log(enrolled);
+var enroll = classNotFull && scheduleNoConflict;
 
-var items = 3;
-var isPremiumMember = true;
-var expired = false;
-var productOffer = (items > 2 && !expired) || (isPremiumMember && !expired);
+alert("You can enroll... git " + enroll);
 
 
 var offerNotExpired = confirm("Is the offer current?");
@@ -55,6 +50,7 @@ var boughtMoreThan2 = confirm("Did you buy more than 2 items?");
 console.log(boughtMoreThan2);
 var premiumMember = confirm("If you did not buy more than 2 items, are you a premium member?");
 console.log(premiumMember);
-var discountApplied = alert("Great! A discount has been applied!");
+var productOffer = (offerNotExpired && (boughtMoreThan2 || premiumMember));
+var discountApplied = alert("Can discount be applied? " + productOffer);
 console.log(discountApplied);
 
