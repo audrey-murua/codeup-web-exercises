@@ -12,28 +12,27 @@ console.log(returnFavoriteColor);
 var littleMermaid = prompt( "How many days did you rent The Little Mermaid?");
 var brotherBear = prompt("How many days did you rent Brother Bear?");
 var hercules = prompt("How many days did you rent Hercules?");
-var amount = (3 * 3) + (3 * 5) + (3 * 1);
-var totalAmount = alert("You rented these movies for nine days, so your total is " + "$" + amount + ".");
-console.log(totalAmount);
+var costOfMovies = prompt("How much are the movies per day?");
+var littleMermaidCost = Number(littleMermaid) * Number(costOfMovies);
+var brotherBearCost = Number(brotherBear) * Number(costOfMovies);
+var herculesCost = Number(hercules) * Number(costOfMovies);
+var totalRental = littleMermaidCost + brotherBearCost + herculesCost;
+alert("Your total rental cost is " + totalRental);
 
-var googlePay = alert("Google pays $400 per hour.");
-console.log(googlePay);
+
 var googleHours = prompt("How many hours did you work for Google?");
-
-var amazonPay = alert("Amazon pays $380 per hour.");
-console.log(amazonPay);
+var googlePay = prompt("What is your rate of pay per/hr for Google?");
+var googleTotal = Number(googleHours) * Number(googlePay);
 var amazonHours = prompt("How many hours did you work for Amazon?");
-
-var facebookPay = alert("Facebook pays $350 per hour.");
-console.log(facebookPay);
+var amazonPay = prompt("What is your rate of pay per/hr for Amazon?");
+var amazonTotal = Number(amazonHours) * Number(amazonPay);
 var facebookHours = prompt("How many hours did you work for Facebook?");
+var facebookPay = prompt("What is your rate of pay per/hr for Facebook?");
+var facebookTotal = Number(facebookHours) * Number(facebookPay);
+var paycheckTotal = googleTotal +  amazonTotal + facebookTotal;
+alert("Your total paycheck is " + paycheckTotal);
 
-var totalHours = alert("You worked a total of 20 hours.")
-console.log(totalHours);
 
-var totalPay = (400 * 6) + (380 * 4) + (350 * 10);
-var totalPayCheck = alert("Your paycheck is " + "$" + totalPay + ".");
-console.log(totalPayCheck);
 
 var classNotFull = confirm("Does the classroom have room?");
 console.log(classNotFull);
@@ -43,6 +42,12 @@ console.log(scheduleNoConflict);
 
 var enrolled = alert("Great! You're enrolled in the class!");
 console.log(enrolled);
+
+var items = 3;
+var isPremiumMember = true;
+var expired = false;
+var productOffer = (items > 2 && !expired) || (isPremiumMember && !expired);
+
 
 var offerNotExpired = confirm("Is the offer current?");
 console.log(offerNotExpired);
