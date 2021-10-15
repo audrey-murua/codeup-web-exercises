@@ -31,5 +31,25 @@ var hadBreakfastMessage = (hadBreakfast) ? "I had breakfast this morning." : "I 
     console.log(hadBreakfast);
     console.log(hadBreakfastMessage);
 
-})();
 
+
+
+//10-15-21
+// Write a function called 'typeCheck' that takes an input and returns a string of the data type entered. If the data type is a string, return the string "Haha, it's a string of string!"
+
+Tests:
+    console.log(typeCheck(''));
+console.log(typeCheck(isNaN()));
+console.log(typeCheck(!false * 3));
+console.log(typeCheck(4 + '4'));
+
+function typeCheck(input) {
+    if (typeof input === "string") {
+        return "Haha, it's a string of string!"
+    } else {
+        return typeof input;
+    }
+
+}
+
+})();

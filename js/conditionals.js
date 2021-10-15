@@ -172,7 +172,7 @@ function userValue(num) {
         alert(userNum + "plus 100 is " + (userNum + 100))
 
         if (userNum < 0) {
-        }
+
         alert(" this is a negative number")
     } else if (userNum > 0) {
         alert(userNum + " is a positive number.")
