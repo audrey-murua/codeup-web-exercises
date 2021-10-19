@@ -54,6 +54,9 @@
         console.log("Name #" + (index + 1) + " is : " + names);
     });
 
+    //names.forEach(function(name) {
+    //  console.log(name);
+    // })
 
 
     /**
@@ -71,17 +74,23 @@
      */
 
 
-    var one = [1, 2, 3, 4, 5]
 
 
-    function firstElement (one, index) {
-        if (one == 1);
-        return one [0];
-
-
+ function first (arr) {
+        return arr[0];
     }
 
+    function second( arr) {
+    return arr[1];
+    }
 
+    function third(arr) {
+    return arr[arr.length -1]
+    }
+
+    console.log(first(names));
+    console.log(second(names));
+    console.log(third(names));
 
 
 
