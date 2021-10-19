@@ -40,3 +40,13 @@ for (var i = 1; i < 50; i++) {
 //     }
 // }
 
+// for var (b = 1; b <= 50; b++) {
+//     if (b % 2 === 0) {
+//         continue;
+//     }
+//     if (b === userNum) {
+//         console.log("skip " + userNum);
+//         continue;
+//     }
+//     console.log("Here's an odd Number: " + b);
+// }
