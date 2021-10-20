@@ -34,4 +34,7 @@
      }
      console.log(unorderedPlanets());
 
+    // var unorderedListOfPlanets = "<ul><li>" + planetsArray.join("</li><li>") + "</i></ul>";
+    //console.log(unorderedListOfPlanets);
+    //document.write(unorderedListOfPlanets);
 })();
