@@ -70,6 +70,12 @@ function typeCheck(input) {
         }
     }
 
+//10-20-21 Exercise
 
+function secondToLast (array) {
+        return array[array.length -2]
+}
+
+    console.log(secondToLast(["1", "2", "3", "4", "5"]))
 
 })();
