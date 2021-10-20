@@ -29,10 +29,11 @@
      * string, and <li> tags around each planet.
      */
 
-   var app = document.querySelector("#app");
-   app.innerHTML = "<ul>" + planetsString.map(function (planet) {
-       return "<li>" + planet + "</li>";
-   }).join("") + "</ul>";
+    function unorderedPlanets(planet) {
+         return "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+     }
+     console.log(unorderedPlanets());
+
 
 
 })();
