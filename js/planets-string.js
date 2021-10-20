@@ -29,11 +29,9 @@
      * string, and <li> tags around each planet.
      */
 
-    function unorderedPlanets(planet) {
+    function unorderedPlanets() {
          return "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
      }
      console.log(unorderedPlanets());
-
-
 
 })();
