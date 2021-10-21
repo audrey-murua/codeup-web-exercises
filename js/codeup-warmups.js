@@ -78,4 +78,12 @@ function secondToLast (array) {
 
     console.log(secondToLast(["1", "2", "3", "4", "5"]))
 
+// 10-21-21 Exercise
+
+function moveToEnd (array) {
+        var elementOne = array.shift();
+        array.push(elementOne);
+        return array;
+}
+    console.log(moveToEnd([1,2,3,4,5]));
 })();
