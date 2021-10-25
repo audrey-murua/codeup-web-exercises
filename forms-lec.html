@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+<!--method: post means sending off information, get means getting information -->
+<form method="POST" action="https://request-inspector.glitch.me/">
+<!--don't need ID to submit a form, but it is used to click on the actual word such as username
+and password and redirect it into their boxes-->
+   <!-- forms need the name attribute for it to  be usuable-->
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" value="username">
+    <!-- text input has the option of values, where you can fill the box with a starting value that is editable
+     or a placeholder that is not editable-->
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+    <!--the text area works similarly to text input, but it can hold much more user input.
+     It does not have a value attribute, but you can put a starting value before closing the textarea tag-->
+    <label for="bio"> Tell me about yourself</label>
+    <textarea name="bio" id="bio" cols="40" rows="5"></textarea>
+    <input type="submit">
+    <!--input type can be changed to a checkbox, the checked means that the box is checked by default
+    <input type="checkbox" name="emailSignup" value="true" checked>Would you care to subscribe to our newsletter?-->
+    <!--<button type="submit">Send Off</button> is another way to create a button with customization rather than the example above-->
+</form>
+
+</body>
+</html>
