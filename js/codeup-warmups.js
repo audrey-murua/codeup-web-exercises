@@ -86,4 +86,18 @@ function moveToEnd (array) {
         return array;
 }
     console.log(moveToEnd([1,2,3,4,5]));
+
+
+//10-25-21
+
+var pokemon = {
+    Name: "Pikachu",
+    Height: "1\"04\'",
+    Weight: "13.2 lbs",
+    Category: "Mouse",
+    Abilities: "Static",
+    Type: "Electric",
+    Weakness: "Ground"
+};
+
 })();

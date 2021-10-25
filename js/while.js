@@ -20,17 +20,17 @@ var allCones = Math.floor(Math.random() * 50) + 50;
 console.log(allCones + "  are ready to sell.");
 do {
     var conesToBuy = Math.floor(Math.random() * 5) + 1;
-    if (conesToBuy <= allCones; {
+    if (conesToBuy <= allCones) {
         allCones -= conesToBuy;
-    } else
-    {
-        console.log("Customer wants to buy " + conesToBuy + " cones. I have " + allCones + " left.");
+    } else {
+        {
+            console.log("Customer wants to buy " + conesToBuy + " cones. I have " + allCones + " left.");
+        }
     }
+    while (allCones !== 0) {
 
-
-} while (allCones !== 0) {
-
-    console.log("We're closed.");
+        console.log("We're closed.");
+    }
 }
 
 
