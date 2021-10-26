@@ -100,4 +100,42 @@ var pokemon = {
     Weakness: "Ground"
 };
 
+//10-26-21
+
+    var wrestlers = [
+        {
+            name: "Bret Hart",
+            nationality: "Canadian"
+        }, {
+            name: "Shawn Michaels",
+            nationality: "American"
+        }, {
+            name: "Christian Cage",
+            nationality: "Canadian"
+        }, {
+            name: "Keiji Mutoh",
+            nationality: "Japanese"
+        }, {
+            name: "Eddy Guerrero",
+            nationality: "American"
+        }, {
+            name: "Owen Hart",
+            nationality: "Canadian"
+        }
+    ];
+
+    function canadianWrestlers (arr) {
+        var bucket = [];
+        arr.forEach(function (element) {
+            if (element.nationality === "Canadian") {
+                bucket.push(element);
+            }
+        });
+        return bucket;
+    }
+
+    console.log(canadianWrestlers(wrestlers));
+
+
+
 })();
