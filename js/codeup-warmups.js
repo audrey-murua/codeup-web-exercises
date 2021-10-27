@@ -137,5 +137,14 @@ var pokemon = {
     console.log(canadianWrestlers(wrestlers));
 
 
+    //10-27-21
+
+    var circle = {
+        radius: 36
+    }
+
+    var area = Math.round(Math.PI * Math.pow(circle.radius, 2));
+
+    console.log(area);
 
 })();
