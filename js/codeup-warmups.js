@@ -136,6 +136,44 @@ var pokemon = {
 
     console.log(canadianWrestlers(wrestlers));
 
+//11-2/-21
+
+        var groceries = [
+            {
+                name: "carrots",
+                quantity: 5
+            },{
+                name: "yams",
+                quantity: 50
+            },{
+                name: "oranges",
+                quantity: 9
+            },{
+                name: "onions",
+                quantity: 2
+            },{
+                name: "cucumbers",
+                quantity: 6
+            },{
+                name: "potatoes",
+                quantity: 8
+            }
+        ];
+
+    function mostGroceries (grocery) {
+        var yams = {
+            name: "food",
+            quantity: 0
+        }
+        grocery.forEach(function (element) {
+            if (element.quantity > yams.quantity) {
+                yams = element;
+            }
+        });
+        return yams;
+    }
+
+    console.log(mostGroceries(groceries));
 
 
 })();
