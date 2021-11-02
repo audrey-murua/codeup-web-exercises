@@ -1,0 +1,43 @@
+.fancy-header {
+    color: purple;
+    text-align: center;
+}
+
+h3 {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #8ca5b5;
+    background-image: url("../img/Tech Background.jpeg");
+    background-position-x: center;
+    background-position-y: 162px ;
+    background-repeat: no-repeat;
+    font-family: 'Space Mono', monospace;
+}
+
+li {
+    list-style: square;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+A:link {
+    color: darkblue;
+}
+
+A:visited {
+    color: purple;
+}
+
+A:hover {
+    color: orangered;
+}
+
+A:active {
+    color: lime;
+}
