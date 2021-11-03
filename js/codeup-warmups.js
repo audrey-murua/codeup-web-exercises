@@ -136,29 +136,40 @@ var pokemon = {
 
     console.log(canadianWrestlers(wrestlers));
 
-//11-2/-21
 
-        var groceries = [
-            {
-                name: "carrots",
-                quantity: 5
-            },{
-                name: "yams",
-                quantity: 50
-            },{
-                name: "oranges",
-                quantity: 9
-            },{
-                name: "onions",
-                quantity: 2
-            },{
-                name: "cucumbers",
-                quantity: 6
-            },{
-                name: "potatoes",
-                quantity: 8
-            }
-        ];
+    //10-27-21
+
+    var circle = {
+        radius: 36
+    }
+
+    var area = Math.round(Math.PI * Math.pow(circle.radius, 2));
+
+    console.log(area);
+
+    //11-2-21
+
+    var groceries = [
+        {
+            name: "carrots",
+            quantity: 5
+        },{
+            name: "yams",
+            quantity: 50
+        },{
+            name: "oranges",
+            quantity: 9
+        },{
+            name: "onions",
+            quantity: 2
+        },{
+            name: "cucumbers",
+            quantity: 6
+        },{
+            name: "potatoes",
+            quantity: 8
+        }
+    ];
 
     function mostGroceries (grocery) {
         var yams = {
@@ -175,14 +186,42 @@ var pokemon = {
 
     console.log(mostGroceries(groceries));
 
-    //10-27-21
+    //11-3-21
 
-    var circle = {
-        radius: 36
-    }
+    var products = [
+        {
+            name: 'Playstation 5',
+            price: 599.99
+        }, {
+            name: 'Logitech Wireless Mouse',
+            price: 23.99
+        }, {
+            name: 'Macbook Pro',
+            price: 1099.99
+        }, {
+            name: 'GoPro HERO10',
+            price: 399.99
+        }, {
+            name: '12" & 6" Metal Ruler Set',
+            price: 5.99
+        }]
 
-    var area = Math.round(Math.PI * Math.pow(circle.radius, 2));
+function sortByName(array) {
+    return array.sort(function (a, b) {
+        var lower = a.name.toLowerCase();
+        var lowerTwo = b.name.toLowerCase();
 
-    console.log(area);
+        if (lower < lowerTwo) {
+            return -1;
+        } else if (lower > lowerTwo) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+}
+
+console.log(sortByName(products));
+
 
 })();
