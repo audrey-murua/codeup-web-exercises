@@ -29,15 +29,15 @@ function analyzeColor(color) {
             } else if (color === "red") {
                 return "Strawberries are red.";
 
-            } else (color === "cyan") {
-        return "I dont know anything about cyan";
+            } else {
+        return "I dont know anything about " + color + ".";
     }
 }
 
 console.log(analyzeColor("red"));
 console.log(analyzeColor("blue"));
 console.log(analyzeColor("cyan"));
-console.log(analyzeColor("orange"));
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -138,7 +138,7 @@ console.log(calculateTotal(5, 100));
 
 var luckyNumber = Math.floor(Math.random() * 6);
 var promptBill = parseFloat(prompt("What is your total bill?"));
-alert("Your lucky number was " + luckyNumber + "Your total is " + promptBill + "your discounted total is " + calculateTotal(luckyNumber, promptBill))
+alert("Your lucky number was " + luckyNumber + "." + " Your total is " + promptBill + "." + " Your discounted total is: " + calculateTotal(luckyNumber, promptBill))
 
 
 
@@ -169,7 +169,7 @@ function userValue(num) {
         } else {
             alert(userNum + " is an odd number.")
         }
-        alert(userNum + "plus 100 is " + (userNum + 100))
+        alert(userNum + " plus 100 is " + (userNum + 100))
 
         if (userNum < 0) {
 
@@ -187,7 +187,7 @@ function userValue(num) {
 if (confirm("Hi, would you like to enter a number?")) {
     var userResult = prompt("Ok, what number do you want to enter?")
     userValue(userResult)
-    else {
+} else {
     alert("That's okay")
-    }
+
 }
