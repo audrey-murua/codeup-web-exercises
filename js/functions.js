@@ -98,8 +98,8 @@ function calculateTip(tipPercentage, totalBill) {
 
 
     var totalAmt = parseFloat(prompt("What is the total of your bill?"));
-    var tip = parseFloat(prompt("What tip percentage would you like to us"));
-   alert("Your tip amount should be: " + calculateTip(totalAmt, tip).tofixed(2));
+    var tip = parseFloat(prompt("What tip percentage would you like to use"));
+   alert("Your tip amount should be: " + calculateTip(totalAmt, tip).toFixed(2));
 
 
 
