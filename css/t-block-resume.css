@@ -10,3 +10,10 @@ hr {
    background-color: #0081a7;
     height: 5px;
 }
+
+
+@media only screen and (max-width: 752px) {
+    h5 {
+        text-decoration: underline;
+    }
+}
