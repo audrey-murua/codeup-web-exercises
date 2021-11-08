@@ -1,6 +1,12 @@
+
+body {
+    background-color: #cecdcd;
+    color: #0081a7;
+}
+
+
 hr {
     width: 100%;
-   background-color: #0fb784;
+   background-color: #0081a7;
     height: 5px;
-    margin: 0;
 }
