@@ -223,5 +223,58 @@ function sortByName(array) {
 
 console.log(sortByName(products));
 
+    // 11/9/21
+
+    var bBallPlayers = [
+        {
+            name: "Hakeem Olajuwon",
+            height: 213
+        }, {
+            name: "Muggsy Bogues",
+            height: 160
+        }, {
+            name: "Chris Paul",
+            height: 183
+        }, {
+            name: "Bol Bol",
+            height: 218
+        }, {
+            name: "Moochie Norris",
+            height: 185
+        }, {
+            name: "Manu Ginobili",
+            height: 198
+        }
+    ];
+
+    function lowestHeight (array) {
+        var smallest = {
+            name: "player",
+            height: 160
+        }
+        array.forEach(function (element) {
+            if (element.height <= smallest.height) {
+                smallest = element;
+            }
+        });
+        return smallest;
+    }
+
+    console.log(lowestHeight(bBallPlayers));
+
+    //other solution
+
+    function findShortest (arr) {
+        var holdThis = {height: Number.MAX_VALUE};
+        arr.forEach(function(el) {
+            if (el.height < holdThis.height) {
+                holdThis = el;
+            }
+        });
+        return holdThis;
+    }
+
+    console.log(findShortest(bBallPlayers))
+
 
 })();
