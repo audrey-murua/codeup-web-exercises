@@ -1,7 +1,7 @@
 .jumbotron {
     background-image: url("/../img/pizza.png");
-    background-repeat: no-repeat, repeat;
-    background-position: center;
+    background-repeat: repeat, repeat;
+    /*background-position: center;*/
     margin: 20px 0;
 }
 

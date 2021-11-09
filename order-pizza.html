@@ -9,9 +9,10 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/custom.css">
-
+    <script src="https://kit.fontawesome.com/91879b2069.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<main>
 
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">Pizza world</a>
@@ -21,11 +22,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Order online <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="#">Order online </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Menu<span class="sr-only">(current)</span></a>
             </li>
             <form class="form-inline">
                 <input class="form-control mr-2" type="search" placeholder="Zip code" aria-label="Search">
@@ -34,7 +35,7 @@
         </ul>
         <ul class="navbar-nav ml-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign up</a>
+                <a class="nav-link" href="#"><i class="fas fa-user"></i> Sign up</a>
             </li>
         </ul>
     </div>
@@ -62,46 +63,56 @@
     </ul>
 </div>
 
+<!--    Main form for size and crust-->
+
 <div class="tab-content">
-        <div class="card text-center">
-            <div class="card-header  bg-primary text-white text-left">
-                Choose size and crust
-            </div>
-            <div class="card-body">
+    <div class="card text-center">
+        <div class="card-header  bg-primary text-white text-left">
+            Choose size and crust
+        </div>
+        <div class="card-body">
 
+<!--            Form 1 for Hand Tossed Crust-->
 
+            <div class="crust-container text-left">
                 <div class="card">
                     <div class="card-header">
                         Hand Tossed
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                        <li class="list-group-item">Small (10")</li>
-                        <li class="list-group-item">Large (12")</li>
+                        <li class="list-group-item"><input type="radio" id="small-1" name="pizza-crust" value="small">
+                            <label for="small-1">Small (10")</label></li>
+                        <li class="list-group-item"><input type="radio" id="large-1" name="pizza-crust" value="large">
+                            <label for="large-1">Large (12")</label></li>
                     </ul>
                 </div>
+
+<!--                Form 2 for Crispy Thin Crust-->
+
                 <div class="card">
                     <div class="card-header">
                         Crispy Thin
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                        <li class="list-group-item">Medium (12")</li>
-                        <li class="list-group-item">Large (14")</li>
+                        <li class="list-group-item"><input type="radio" id="medium-1" name="pizza-crust" value="medium">
+                            <label for="medium-1">Medium (12")</label></li>
+                        <li class="list-group-item"><input type="radio" id="large-2" name="pizza-crust" value="large2">
+                            <label for="large-2">Large (14")</label></li>
                     </ul>
                 </div>
             </div>
-            <div class="card-footer text-muted text-right">
-                <a href="#" class="btn btn-primary">Next Step ></a>
-            </div>
+        </div>
+
+<!--        Next Step Button-->
+
+        <div class="card-footer text-muted text-right">
+            <a href="#" class="btn btn-primary">Next Step ></a>
         </div>
     </div>
 </div>
-
-
-
-
-
+</div>
 
 
 <!--    <div class="card text-center">-->
@@ -117,10 +128,6 @@
 <!--            2 days ago-->
 <!--        </div>-->
 <!--    </div>-->
-
-
-
-
 
 
 <!--            <div class="card">-->
@@ -140,15 +147,7 @@
 <!--                <a href="#" class="btn btn-primary">Next Step ></a>-->
 <!--        </div>-->
 
-
-
-
-
-
-
-
-
-
+</main>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
