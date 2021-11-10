@@ -276,5 +276,36 @@ console.log(sortByName(products));
 
     console.log(findShortest(bBallPlayers))
 
+    // 11-10-21
+
+    var myCharacter = {
+        name: 'Titan',
+        hitPoints: 100,
+        class: 'Warrior',
+        abilities: {
+            attack: function(obj) {
+                console.log(myCharacter.name + " hit " + obj.name + " for " + myCharacter.weapon.damage + "!")
+                obj.hitPoints -= myCharacter.weapon.damage;
+                console.log(obj.name + " has " + obj.hitPoints + " hit points left!")
+            },
+        },
+        magicPoints: 0,
+        weapon: {
+            name: 'Silver Sabre',
+            damage: 16,
+            type: 'sword'
+        }
+    }
+
+    var enemy = {
+        name: 'Savage Orc',
+        hitPoints: 100,
+        class: 'Warrior',
+        magicPoints: 0,
+    }
+
+
+    myCharacter.abilities.attack(enemy);
+
 
 })();
