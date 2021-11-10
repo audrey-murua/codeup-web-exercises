@@ -14,6 +14,8 @@
 <body>
 <main>
 
+<!--Navigation Bar-->
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="#">Pizza world</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
@@ -41,6 +43,7 @@
     </div>
 </nav>
 
+<!--Jumbotron-->
 
 <div class="container">
     <div class="jumbotron jumbotron-fluid d-none d-md-block">
@@ -48,17 +51,19 @@
     </div>
 </div>
 
+<!--    Navigation Tabs-->
+
 <div class="tab-container">
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href="#"><span class="badge badge-secondary">1</span>Size and crust</a>
+            <a class="nav-link active" href="#size-crust" data-bs-toggle="tab"><span class="badge badge-secondary">1</span>Size and crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="badge badge-secondary">2</span>Cheese and Sauce</a>
+            <a class="nav-link" href="#cheese-sauce" data-bs-toggle="tab"><span class="badge badge-secondary">2</span>Cheese and Sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#"><span class="badge badge-secondary">3</span>Toppings</a>
+            <a class="nav-link" href="#toppings" data-bs-toggle="tab"><span class="badge badge-secondary">3</span>Toppings</a>
         </li>
     </ul>
 </div>
@@ -66,10 +71,10 @@
 <!--    Main form for size and crust-->
 
 <div class="tab-content">
+    <div class="tab-pane active" id="size-crust">
     <div class="card text-center">
         <div class="card-header  bg-primary text-white text-left">
-            Choose size and crust
-        </div>
+            Choose size and crust </div>
         <div class="card-body">
 
 <!--            Form 1 for Hand Tossed Crust-->
@@ -77,8 +82,7 @@
             <div class="crust-container text-left">
                 <div class="card">
                     <div class="card-header">
-                        Hand Tossed
-                    </div>
+                        Hand Tossed </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
                         <li class="list-group-item"><input type="radio" id="small-1" name="pizza-crust" value="small">
@@ -88,12 +92,12 @@
                     </ul>
                 </div>
 
+
 <!--                Form 2 for Crispy Thin Crust-->
 
                 <div class="card">
                     <div class="card-header">
-                        Crispy Thin
-                    </div>
+                        Crispy Thin </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
                         <li class="list-group-item"><input type="radio" id="medium-1" name="pizza-crust" value="medium">
@@ -112,9 +116,62 @@
         </div>
     </div>
 </div>
-</div>
 
 
+
+<!--    Cheese and Sauce Main form-->
+
+        <div class="tab-pane" id="cheese-sauce">
+            <div class="card text-center">
+                <div class="card-header  bg-primary text-white text-left">
+                    Choose Cheese and Sauce
+                </div>
+                <div class="card-body">
+
+                    <!--            Form 1 for Hand Tossed Crust-->
+
+                    <div class="crust-container text-left">
+                        <div class="card">
+                            <div class="card-header">
+                                Hand Tossed
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                <li class="list-group-item"><input type="radio" id="small-1" name="pizza-crust" value="small">
+                                    <label for="small-1">Small (10")</label></li>
+                                <li class="list-group-item"><input type="radio" id="large-1" name="pizza-crust" value="large">
+                                    <label for="large-1">Large (12")</label></li>
+                            </ul>
+                        </div>
+
+                        <!--                Form 2 for Crispy Thin Crust-->
+
+                        <div class="card">
+                            <div class="card-header">
+                                Crispy Thin
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                <li class="list-group-item"><input type="radio" id="medium-1" name="pizza-crust" value="medium">
+                                    <label for="medium-1">Medium (12")</label></li>
+                                <li class="list-group-item"><input type="radio" id="large-2" name="pizza-crust" value="large2">
+                                    <label for="large-2">Large (14")</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--        Next Step Button-->
+
+                <div class="card-footer text-muted text-right">
+                    <a href="#" class="btn btn-primary">Next Step ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--this div is for the tab-content container-->
+    </div>
 <!--    <div class="card text-center">-->
 <!--        <div class="card-header">-->
 <!--            Featured-->
