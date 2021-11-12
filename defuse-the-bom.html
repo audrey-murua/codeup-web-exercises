@@ -28,10 +28,17 @@
         detonationTimer--;
     }, 1000);
 
+    //other solution
+    // that is all that is needed, instead of creating a variable with a function within like above
+    // setInterval(updateTimer, 1000);
+    // for the next problem
+    //var bombInterval = setInterval(updateTimer, 1000);
+
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
         clearInterval(intervalID);
+        //  clearInterval(bombInterval);
     }
 
     // Don't modify anything below this line!
