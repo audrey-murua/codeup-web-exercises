@@ -307,5 +307,28 @@ console.log(sortByName(products));
 
     myCharacter.abilities.attack(enemy);
 
+    // 11/12/21
+
+    function randomItem (arr) {
+        var random = Math.floor(Math.random() * arr.length);
+
+        var item = arr[random];
+
+        return item;
+    }
+
+    var array = ["rock", "paper", "scissors"];
+
+        var result = randomItem(array);
+
+        console.log(result);
+
+    //other solution
+
+    function randomEl(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+ console.log(randomEl("rock", "paper", "scissors"));
+
 
 })();
