@@ -1,4 +1,9 @@
 
+.container {
+    max-width: 1700px;
+    padding-right: 0;
+    padding-left: 0;
+}
 
 .jumbotron {
     background-image: url("/../img/pizza.png");
@@ -18,4 +23,8 @@
     margin: 0 5px;
     align-items: center;
     border-radius: 1em;
+}
+
+.btn-group {
+    display: inline-table;
 }
