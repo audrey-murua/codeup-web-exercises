@@ -17,7 +17,7 @@
 <h1 id="highlight-me" class="fancy-header">Hello World!</h1>
 
 <div class="codeup">
-    An informational message
+    An informational message!
 </div>
 
 <p id="highlight-me2" class="codeup"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra odio massa, eget aliquet lectus consectetur et. Integer tristique vulputate ipsum, sit amet mollis erat tempor ut. Nunc semper elit sapien, sed commodo metus auctor a. Maecenas euismod erat nec urna rhoncus tempus. Pellentesque molestie nec neque quis mattis. Morbi sodales ac libero at tristique. Maecenas finibus ligula a orci fringilla, ut vehicula felis venenatis. Nullam ante risus, malesuada nec leo vel, dapibus gravida diam. Pellentesque ipsum lorem, ullamcorper vitae rutrum vel, condimentum ac tellus. Donec et scelerisque velit, vitae venenatis justo. Integer eget facilisis ex. Vestibulum aliquam sed dui in placerat. Maecenas nec est ac lectus dictum eleifend. Donec hendrerit enim in porta dignissim. </p>
@@ -66,7 +66,27 @@
         // var mainHeader = $("h1").html();
         // alert(mainHeader);
 
-        $("h1, p, li").css("background-color", "yellow");
+        // $("h1, p, li").css("background-color", "yellow");
+
+        $("h1").click(function () {
+            $("h1").css("background-color", "yellow");
+        });
+
+
+        $("p").dblclick(function () {
+            $("p").css("font-size", "18px");
+        });
+
+
+        $('li').hover(
+            function () {
+                $("li").css('color', 'red');
+            },
+            function () {
+                $("li").css("color", "black");
+            }
+        );
+
 
     })
 
