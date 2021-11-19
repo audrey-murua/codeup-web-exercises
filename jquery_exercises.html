@@ -10,16 +10,16 @@
 <body>
 <h1 class="fancy-header">Hello World!</h1>
 
-<div class="message-info">
+<div class="codeup">
     An informational message
 </div>
 
-<p class="lorem-paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra odio massa, eget aliquet lectus consectetur et. Integer tristique vulputate ipsum, sit amet mollis erat tempor ut. Nunc semper elit sapien, sed commodo metus auctor a. Maecenas euismod erat nec urna rhoncus tempus. Pellentesque molestie nec neque quis mattis. Morbi sodales ac libero at tristique. Maecenas finibus ligula a orci fringilla, ut vehicula felis venenatis. Nullam ante risus, malesuada nec leo vel, dapibus gravida diam. Pellentesque ipsum lorem, ullamcorper vitae rutrum vel, condimentum ac tellus. Donec et scelerisque velit, vitae venenatis justo. Integer eget facilisis ex. Vestibulum aliquam sed dui in placerat. Maecenas nec est ac lectus dictum eleifend. Donec hendrerit enim in porta dignissim. </p>
+<p class="codeup"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra odio massa, eget aliquet lectus consectetur et. Integer tristique vulputate ipsum, sit amet mollis erat tempor ut. Nunc semper elit sapien, sed commodo metus auctor a. Maecenas euismod erat nec urna rhoncus tempus. Pellentesque molestie nec neque quis mattis. Morbi sodales ac libero at tristique. Maecenas finibus ligula a orci fringilla, ut vehicula felis venenatis. Nullam ante risus, malesuada nec leo vel, dapibus gravida diam. Pellentesque ipsum lorem, ullamcorper vitae rutrum vel, condimentum ac tellus. Donec et scelerisque velit, vitae venenatis justo. Integer eget facilisis ex. Vestibulum aliquam sed dui in placerat. Maecenas nec est ac lectus dictum eleifend. Donec hendrerit enim in porta dignissim. </p>
 
 <ul id="Lorem-List">
-    <li id="lorem1" class="codeup">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-    <li id="lorem2" class="codeup">Aliquam tincidunt mauris eu risus.</li>
-    <li id="lorem3" class="codeup">Vestibulum auctor dapibus neque.</li>
+    <li id="codeup">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+    <li id="lorem2">Aliquam tincidunt mauris eu risus.</li>
+    <li id="lorem3">Vestibulum auctor dapibus neque.</li>
     <li id="lorem4">Aenean ultricies mi vitae est.</li>
     <li id="lorem5">Mauris placerat eleifend leo.</li>
     <li id="lorem6">Donec eu libero sit amet quam egestas semper.</li>
@@ -38,11 +38,15 @@
     $(document).ready(function () {
 
 
-        var unorderedList = $("#lorem1").html();
-        alert(unorderedList);
+        // var unorderedList = $("#lorem1").html();
+        // alert(unorderedList);
+        //
+        // var unorderedList2 = $("#lorem2").html();
+        // alert(unorderedList2);
 
-        var unorderedList2 = $("#lorem2").html();
-        alert(unorderedList2);
+        $(".codeup").css("border", "solid 1px red" )
+
+
 
     })
 
