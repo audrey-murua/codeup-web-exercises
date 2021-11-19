@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>JQuery</title>
+</head>
+<body>
+<h1 class="fancy-header">Hello World!</h1>
+
+<div class="message-info">
+    An informational message
+</div>
+
+<p class="lorem-paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pharetra odio massa, eget aliquet lectus consectetur et. Integer tristique vulputate ipsum, sit amet mollis erat tempor ut. Nunc semper elit sapien, sed commodo metus auctor a. Maecenas euismod erat nec urna rhoncus tempus. Pellentesque molestie nec neque quis mattis. Morbi sodales ac libero at tristique. Maecenas finibus ligula a orci fringilla, ut vehicula felis venenatis. Nullam ante risus, malesuada nec leo vel, dapibus gravida diam. Pellentesque ipsum lorem, ullamcorper vitae rutrum vel, condimentum ac tellus. Donec et scelerisque velit, vitae venenatis justo. Integer eget facilisis ex. Vestibulum aliquam sed dui in placerat. Maecenas nec est ac lectus dictum eleifend. Donec hendrerit enim in porta dignissim. </p>
+
+<ul id="Lorem-List">
+    <li id="lorem1" class="codeup">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+    <li id="lorem2" class="codeup">Aliquam tincidunt mauris eu risus.</li>
+    <li id="lorem3" class="codeup">Vestibulum auctor dapibus neque.</li>
+    <li id="lorem4">Aenean ultricies mi vitae est.</li>
+    <li id="lorem5">Mauris placerat eleifend leo.</li>
+    <li id="lorem6">Donec eu libero sit amet quam egestas semper.</li>
+</ul>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        var unorderedList = $("#lorem1").html();
+        alert(unorderedList);
+
+        var unorderedList2 = $("#lorem2").html();
+        alert(unorderedList2);
+
+    })
+
+
+</script>
+
+</body>
+</html>
