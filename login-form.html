@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+
+    <style>
+        #error-message {
+            display: none;
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <main>
@@ -17,9 +24,57 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
-            <button class="btn btn-block">Login</button>
+            <small id="error-message">We're sorry. Your username or password is incorrect. Please try again.</small>
+            <br>
+            <button id="butn-submit" class="btn btn-block">Login</button>
         </fieldset>
     </form>
 </main>
+
+<script>
+
+    // VANILLA JS SOLUTION
+
+//    var submitButton = document.querySelector("#btn-submit");
+//    var errorMessage = document.querySelector("#error-message");
+//    var usernameInput = document.querySelector("#username");
+//    var passwordInput = document.querySelector("#password");
+//    var username = "regulus2021";
+//    var password = "gocodeup";
+//
+//    submitButton.addEventListener("click", function(event) {
+//        event.preventDefault();
+//        if(usernameInput.value !== username || passwordInput.value !== password) {
+//            errorMessage.style.display = "inline-block";
+//        }
+//    })
+
+
+
+//JQUERY SOLUTION
+
+
+    $(document).ready(function() {
+
+
+        var submitButton = $("#butn-submit");
+        var errorMessage = $("#error-message");
+        var usernameInput = $("#username");
+        var passwordInput = $("#password");
+
+        submitButton.click(function (e) {
+            e.preventDefault()
+            if (usernameInput.val() !== username || passwordInput.val() !== pasword) {
+                errorMessage.css("display", "inline-block");
+            }
+        })
+
+
+    });
+
+
+
+
+</script>
 </body>
 </html>
