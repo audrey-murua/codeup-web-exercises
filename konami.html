@@ -20,7 +20,8 @@
             //console.log(event.keyCode);
             konamiKeys.push(event.keyCode);
             if(konamiCode.toString() === konamiKeys.toString()) {
-                alert("You have added 30 lives!");
+                $("h1").html("You have added 30 lives!")
+                // alert("You have added 30 lives!");
             }
         })
 
