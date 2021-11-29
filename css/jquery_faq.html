@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JQuery FAQ Exercise</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<h1>Big Bend National Park</h1>
+
+<dl>
+
+    <dt>Big Bend National Park Location</dt>
+    <dd class="invisible">It is located in West Texas, in the Chihuahuan Desert, near Alpine, Texas.</dd>
+
+    <dt>Big Bend National Park Status</dt>
+    <dd class="invisible">Big Bend Became a National Park on June 20, 1935.</dd>
+
+    <dt>Big Bend National Park Name</dt>
+    <dd class="invisible">The Name Big Bend Comes From a Large Bend in the Rio Grande River Along the Park Boundary.</dd>
+
+    <dt>Big Bend National Park Area</dt>
+    <dd class="invisible"> Total Area: 801,163 acres</dd>
+
+    <dt>Big Bend Highest Elevation</dt>
+    <dd class="invisible">The Highest Elevation found in Big Bend is 7,832ft on Emory Peak.</dd>
+
+    <dt>Big Bend Lowest Elevation</dt>
+    <dd class="invisible">The Lowest Elevation found in Big Bend is 1,715ft at the Rio Grande River.</dd>
+
+    <dt>Big Bend National Park Wildlife</dt>
+    <dd class="invisible">There are 56 species of reptiles, 75 species of mammals, more than 450 species of birds and at least 1,200 species of plants. </dd>
+
+    <dt>Big Bend Visitors</dt>
+    <dd class="invisible">Number of Visitors in 2019 was 463,832.</dd>
+
+    <dt>Big Bend Park Activities</dt>
+    <dd class="invisible">Activities include scenic drives, programs led by Big Bend Park Rangers, and stargazing.</dd>
+
+    <dt>Big Bend National Park Fee</dt>
+    <dd class="invisible">The entrance fee for Big Bend National Park is $30 per vehicle per week.</dd>
+
+</dl>
+
+<a href="#" id="show-faqs">Click to toggle Big Bend National Park FAQS.</a>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
+
+        $("#show-faqs").click(function(event) {
+            event.preventDefault();
+            $("dd").toggleClass("invisible");
+        });
+
+
+    });
+</script>
+</body>
+</html>
