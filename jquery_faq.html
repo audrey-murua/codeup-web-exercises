@@ -11,7 +11,7 @@
         }
 
         .highlighter {
-            background: yellow;
+            background: lightgray;
         }
     </style>
 
@@ -30,7 +30,8 @@
     <dd class="invisible">Big Bend Became a National Park on June 20, 1935.</dd>
 
     <dt>Big Bend National Park Name</dt>
-    <dd class="invisible">The Name Big Bend Comes From a Large Bend in the Rio Grande River Along the Park Boundary.</dd>
+    <dd class="invisible">The Name Big Bend Comes From a Large Bend in the Rio Grande River Along the Park Boundary.
+    </dd>
 
     <dt>Big Bend National Park Area</dt>
     <dd class="invisible"> Total Area: 801,163 acres</dd>
@@ -42,7 +43,9 @@
     <dd class="invisible">The Lowest Elevation found in Big Bend is 1,715ft at the Rio Grande River.</dd>
 
     <dt>Big Bend National Park Wildlife</dt>
-    <dd class="invisible">There are 56 species of reptiles, 75 species of mammals, more than 450 species of birds and at least 1,200 species of plants. </dd>
+    <dd class="invisible">There are 56 species of reptiles, 75 species of mammals, more than 450 species of birds and at
+        least 1,200 species of plants.
+    </dd>
 
     <dt>Big Bend Visitors</dt>
     <dd class="invisible">Number of Visitors in 2019 was 463,832.</dd>
@@ -57,23 +60,57 @@
 
 <a href="#" id="show-faqs">Click to toggle Big Bend National Park FAQS.</a>
 
+<h3 id="national-parks-heading">Yellowstone National Park</h3>
+<ul class="national-parks">
+    <li>3,472 square miles.</li>
+    <li>Larger than Rhode Island and Delaware combined.</li>
+    <li>Home of Old Faithful Geyser.</li>
+    <li>Old Faithful erupts every 44 minutes to 2 hours.</li>
+</ul>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<h3>Yosemite National Park</h3>
+<ul class="national-parks">
+    <li>Famous for its giant Sequoia Trees.</li>
+    <li>Yosemite Valley was formed by glaciers.</li>
+    <li>Home to one of the tallest waterfalls in North America.</li>
+    <li>Yosemite's granite rock formations glow like fire at sunset.</li>
+</ul>
+
+<h3>Grand Canyon National Park</h3>
+<ul class="national-parks">
+    <li>The canyon is full of hidden caves.</li>
+    <li>Only 335 caves have been recorded.</li>
+    <li>The Hopi Tribe considers the Grand Canyon a gateway to the afterlife.</li>
+    <li>The most dangerous animal in the canyon is the rock squirrel.</li>
+</ul>
+
+<button id="button1"> Click me for a yellow background</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
     "use strict";
     $(document).ready(function () {
 
-        $("#show-faqs").click(function(event) {
+        $("#show-faqs").click(function (event) {
             event.preventDefault();
             $("dd").toggleClass("invisible");
         });
 
         //Bonus
 
-        $("dt").click(function() {
+        $("dt").click(function () {
             $(this).toggleClass("highlighter");
             //this refers to the current dt you're clicking that will be highlighted
         });
+
+
+        $("#button1").click(function (event) {
+            event.preventDefault();
+            $("ul li:nth-last-child(1)").css("background", "yellow");
+        })
+
+
 
 
     });
