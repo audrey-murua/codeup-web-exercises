@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+<header>
+    <h1>Rock Paper Scissors</h1>
+</header>
+
+
+<h2>Computer Choice: <span id="computer-choice"></span></h2>
+<h2>Player Choice: <span id="user-choice"></span></h2>
+<h2>Results: <span id="results"></span></h2>
+
+<button id="rock">rock</button>
+<button id="paper">paper</button>
+<button id="scissors">scissors</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+    $(document).ready(function () {
+
+        //global variables
+        var computerChoiceDisplay = document.getElementById("computer-choice");
+        var playerChoice = document.getElementById("user-choice");
+        var resultsDisplay = document.getElementById("results");
+        var possibleChoices = document.querySelectorAll("button");
+
+        var result
+
+        //everytime a button is clicked, user picks a choice, computer generates random pick, and results get shown
+        possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) => {
+        var userChoice = e.target.id
+        playerChoice.innerHTML = userChoice
+            generateComputerChoice()
+            getResults()
+        }));
+
+function generateComputerChoice () {
+    var randomNumber = Math.floor(Math.random() * 3) + 1 //can also use possibleChoices.length instead of * 3 + 1
+    var computerChoice
+
+    if (randomNumber === 1) {
+        computerChoice = "rock";
+    }
+    if (randomNumber === 2) {
+        computerChoice = "paper";
+    }
+    if (randomNumber === 3) {
+        computerChoice = "scissors";
+    }
+computerChoiceDisplay.innerHTML = computerChoice
+}
+
+function getResults() {
+    // var result
+
+    if(computerChoice === userChoice) {
+       return result = "you tied!"
+    }
+    if(computerChoice === "rock" && userChoice === "paper") {
+       return result = "you win!"
+    }
+    if(computerChoice === "rock" && userChoice === "scissors") {
+        return result = "you lose!"
+    }
+    if (computerChoice === "paper" && userChoice === "scissors") {
+        return result = "you win!"
+    }
+    if (computerChoice === "paper" && userChoice === "rock") {
+        return result = "you lose!"
+    }
+    if (computerChoice === "scissors" && userChoice === "rock") {
+       return result = "you win!"
+    }
+    if (computerChoice === "scissors" && userChoice === "paper") {
+       return result = "you lose!"
+    }
+    resultsDisplay.innerHTML = result
+}
+
+
+    });
+</script>
+
+
+</body>
+</html>
