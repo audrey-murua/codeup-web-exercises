@@ -9,6 +9,10 @@
         .invisible {
             visibility: hidden;
         }
+
+        .highlighter {
+            background: yellow;
+        }
     </style>
 
 
@@ -62,6 +66,13 @@
         $("#show-faqs").click(function(event) {
             event.preventDefault();
             $("dd").toggleClass("invisible");
+        });
+
+        //Bonus
+
+        $("dt").click(function() {
+            $(this).toggleClass("highlighter");
+            //this refers to the current dt you're clicking that will be highlighted
         });
 
 
