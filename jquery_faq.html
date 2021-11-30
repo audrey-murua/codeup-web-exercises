@@ -104,13 +104,30 @@
             //this refers to the current dt you're clicking that will be highlighted
         });
 
+        //Traversing exercise
 
         $("#button1").click(function (event) {
             event.preventDefault();
             $("ul li:nth-last-child(1)").css("background", "yellow");
-        })
+        });
+
+        //other solution
+
+        // $("#button1").click(function () {
+        // $("ul").each(function () {
+        //     $(this).children().last().css("background", "yellow")
+        // })
+        // })
 
 
+        $("h3").click(function () {
+            $(this).next().children().css("font-weight", "bold");
+        });
+
+
+        $("li").click(function () {
+            $(this).parent().children().first().css("color", "blue");
+        });
 
 
     });
