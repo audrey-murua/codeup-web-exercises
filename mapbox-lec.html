@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+<h1>Welcome to Mapbox!</h1>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4683, 29.5312], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+
+    //Markers
+
+    //Instantiate a new Marker object
+
+    var codeup = new mapboxgl.Marker({
+        //makes a marker
+        color: "blue",
+        //makes the marker blue
+    }).setLngLat([-98.48615, 29.426827]).setDraggable(true)
+    // where the marker is set to (codeup), and the marker is also now draggable
+
+    codeup.addTo(map)
+    //adds marker to the map
+
+    //when the marker is being dragged, once it stops it console logs hello
+    codeup.on('dragend',function () {
+        // console.log("hello! stop moving the marker..")
+        popup.setLngLat(codeup.getLngLat())
+        //popup opens up a popup with hello from codeup when it is done being dragged
+        //popup var is below
+    })
+
+    //Pop-ups
+
+    var popup = new mapboxgl.Popup()
+    .setLngLat(codeup.getLngLat())
+    .setHTML("<h3> Hello from Codeup!</h3>")
+        // "<h3 style="color: green">hello....</h3>"  can put this above to style as well
+    .addTo(map)
+
+    // Long way to do above
+    // popup.setLngLat(codeup.getLngLat())
+    //
+    // popup.addTo(map);
+
+
+var mysteryPlace = new mapboxgl.Marker()
+    .setLngLat([-96.79, 32.77])
+    .addTo(map);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

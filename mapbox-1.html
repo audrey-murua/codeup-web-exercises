@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Mini-Exercise</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+<h1>Welcome to Mapbox!</h1>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<button id="zoom">Zoom</button>
+<script src="js/keys.js"></script>
+
+
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4683, 29.5312], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    setTimeout(function () {
+
+    map.flyTo({
+        center: [-97.0403, 32.8998],
+        // zoom: 12,
+        speed: 0.5,
+    });
+        map.setStyle('mapbox://styles/mapbox/satellite-streets-v11')
+    }, 5000)
+
+    //Bonus
+
+    document.querySelector("#zoom").addEventListener("click", function () {
+        map.setZoom(map.getZoom() + 1);
+    })
+
+
+</script>
+</body>
+</html>
