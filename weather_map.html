@@ -37,6 +37,14 @@
 
         }
 
+        #weather-search {
+            margin: 20px;
+        }
+
+        ::placeholder {
+            text-align: center;
+        }
+
         .future-forecasts .today {
             display: flex;
             align-items: center;
@@ -78,6 +86,7 @@
 <form>
     <input id="weather-search" type="text" placeholder="Enter Location">
     <button id="find-btn" type="submit">Find</button>
+<p id="weather-output"></p>
 </form>
 
 <div class="card-deck">
@@ -208,20 +217,20 @@
         }).done(function (data) {
             console.log(data);
 
-        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
             //current date weather info
 
-        var currentDate = new Date(data.current.dt * 1000)
-        console.log(currentDate);
-        var dayName = days[currentDate.getDay()];
+            var currentDate = new Date(data.current.dt * 1000)
+            console.log(currentDate);
+            var dayName = days[currentDate.getDay()];
             console.log(dayName)
 
-        var currentTemp = data.current.temp;
-        console.log(currentTemp);
+            var currentTemp = data.current.temp;
+            console.log(currentTemp);
 
-        $("#current-card-date").html(dayName);
-        $("#current-temp").html("Current Temp: " + currentTemp.toFixed(0) + "°")
+            $("#current-card-date").html(dayName);
+            $("#current-temp").html("Current Temp: " + currentTemp.toFixed(0) + "°")
 
 
             // weather info [1]
@@ -281,9 +290,18 @@
             $("#temp-low-4").html("Low Temp: " + tempFourLow.toFixed(0) + "°");
 
 
-
         });
 
+// Text Input / Find Button
+
+        $("#find-btn").click(function (e) {
+            e.preventDefault();
+            $("#weather-search").empty()
+
+            var inputStr = $("#weather-search").val();
+            $("#weather-output").html("City: " + inputStr);
+
+        });
 
 
         //map for current city
@@ -296,6 +314,8 @@
         //     zoom: 11.7 // starting zoom
         // });
 
+
+        //part of the doc ready
     });
 
 
