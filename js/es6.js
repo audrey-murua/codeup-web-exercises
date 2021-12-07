@@ -76,9 +76,7 @@ let names = [];
 //   return emails.push(user.email);
 // });
 
-users.forEach((user) => {
-  return emails.push(user.email);
-});
+users.forEach(user => emails.push(user.email));
 
 console.log(emails);
 
@@ -86,9 +84,7 @@ console.log(emails);
 //   return names.push(user.name);
 // });
 
-users.forEach((user) => {
-  return names.push(user.name);
-});
+users.forEach(user => names.push(user.name));
 
 console.log(names);
 
@@ -98,8 +94,11 @@ console.log(names);
 let developers = [];
 
 
-// users.forEach(function(user) {
-users.forEach((user) => {
+users.forEach(function(user) {
+// users.forEach((user) => {
+
+  //other solution instead of the answer below
+  // users.forEach(user = ({name, email, languages}) => {
 
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
@@ -121,7 +120,7 @@ users.forEach((user) => {
 
   // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 
-  developers.push(`${name}'s email is ${email} ${name} knows ${languages},`);
+  developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(', ')}.`);
 
   console.log(developers)
 
@@ -136,7 +135,7 @@ let list = '<ul>';
 
 // developers.forEach(function (developer) {
 
-    for (var developer of developers) {
+    for (let developer of developers) {
 
       // TODO: rewrite the assignment below to use template strings
 
@@ -150,3 +149,7 @@ let list = '<ul>';
 list += '</ul>';
 
 console.log(list)
+
+// other way to check with html
+
+document.getElementsByTagName("body")[0].innerHTML += list;
