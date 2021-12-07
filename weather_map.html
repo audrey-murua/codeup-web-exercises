@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather Map Project</title>
+
+<!--    bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+<!--    mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*body {*/
+        /*    background: */
+        /*    background-repeat: no-repeat;*/
+        /*    background-size: cover;*/
+        /*    overflow: hidden;*/
+        /*    height: 100vh;*/
+        /*    font-family: */
+        /*    */
+        /*}*/
+
+        .card {
+            background: rgba(24,24,27,0.6);
+            color: white;
+
+        }
+
+        .future-forecasts .today {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .future-forecasts .today .day {
+            padding: 5px 15px;
+            background-color: #133d88;
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .future-forecasts .today .temp {
+            font-size: 20px;
+            padding-top: 15px;
+        }
+
+
+        .weather-forecast-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        #map {
+            display: flex;
+           justify-content: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<form>
+    <input id="weather-search" type="text" placeholder="Enter Location">
+    <button id="find-btn" type="submit">Find</button>
+</form>
+
+<div class="card-deck">
+    <div class="card" style="width: 18rem;">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="weather-img-top" alt="weather icon">
+        <div class="card-body">
+            <h5 id="current-card-date">Current Date</h5>
+            <p id="current-temp">Temp</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+<!--        <div class="card-body">-->
+<!--            <a href="#" class="card-link">Card link</a>-->
+<!--            <a href="#" class="card-link">Another link</a>-->
+<!--        </div>-->
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="weather-img-top" alt="weather icon">
+        <div class="card-body">
+            <h5 id="card-date-1">Date [1]</h5>
+            <p id="temp-1">Temp [1]</p>
+            <p id="temp-low-1">Temp [1]</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+<!--        <div class="card-body">-->
+<!--            <a href="#" class="card-link">Card link</a>-->
+<!--            <a href="#" class="card-link">Another link</a>-->
+<!--        </div>-->
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-top" alt="weather icon">
+        <div class="card-body">
+            <h5 id="card-date-2">Date [2]</h5>
+            <p id="temp-2">Temp [2]</p>
+            <p id="temp-low-2">Temp [2]</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+<!--        <div class="card-body">-->
+<!--            <a href="#" class="card-link">Card link</a>-->
+<!--            <a href="#" class="card-link">Another link</a>-->
+<!--        </div>-->
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-top" alt="weather icon">
+        <div class="card-body">
+            <h5 id="card-date-3">Date [3]</h5>
+            <p id="temp-3">Temp [3]</p>
+            <p id="temp-low-3">Temp [3]</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+<!--        <div class="card-body">-->
+<!--            <a href="#" class="card-link">Card link</a>-->
+<!--            <a href="#" class="card-link">Another link</a>-->
+<!--        </div>-->
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" class="card-img-top" alt="weather icon">
+        <div class="card-body">
+            <h5 id="card-date-4">Date [4]</h5>
+            <p id="temp-4">Temp [4]</p>
+            <p id="temp-low-4">Temp [4]</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+        </ul>
+<!--        <div class="card-body">-->
+<!--            <a href="#" class="card-link">Card link</a>-->
+<!--            <a href="#" class="card-link">Another link</a>-->
+<!--        </div>-->
+    </div>
+
+</div>
+
+
+
+<!--map-->
+
+<!--<div id='map' style='width: 600px; height: 500px;'></div>-->
+
+
+<!--Query-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<!--Bootstrap-->
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+<!--Keys-->
+<script src="js/keys.js"></script>
+
+<!--Geocoder-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        //weather API
+
+        $.get("https://api.openweathermap.org/data/2.5/onecall?", {
+            lat: 29.4241,
+            lon: -98.4936,
+            exclude: "minutely,hourly",
+            units: "imperial",
+            APPID: OPEN_WEATHER_KEY
+        }).done(function (data) {
+            console.log(data);
+
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            //current date weather info
+
+        var currentDate = new Date(data.current.dt * 1000)
+        console.log(currentDate);
+        var dayName = days[currentDate.getDay()];
+            console.log(dayName)
+
+        var currentTemp = data.current.temp;
+        console.log(currentTemp);
+
+        $("#current-card-date").html(dayName);
+        $("#current-temp").html("Current Temp: " + currentTemp.toFixed(0) + "°")
+
+
+            // weather info [1]
+
+            var dateOne = new Date(data.daily[1].dt * 1000)
+            var dateNameOne = days[dateOne.getDay()];
+            $("#card-date-1").html(dateNameOne);
+
+            var tempOne = data.daily[1].temp.max;
+            $("#temp-1").html("High Temp: " + tempOne.toFixed(0) + "°");
+
+            var tempOneLow = data.daily[1].temp.min;
+            $("#temp-low-1").html("Low Temp: " + tempOneLow.toFixed(0) + "°");
+
+//weather info [2]
+
+            // Shows Date form mm-dd-year
+
+            // var date = new Date(data.daily[2].dt * 1000).toLocaleDateString('en-US');
+            // var formatedDate = date.split('/').join('-');
+            //
+            // console.log(formatedDate);
+
+            var dateTwo = new Date(data.daily[2].dt * 1000)
+            var dateNameTwo = days[dateTwo.getDay()];
+            $("#card-date-2").html(dateNameTwo);
+
+            var tempTwo = data.daily[2].temp.max;
+            $("#temp-2").html("High Temp: " + tempTwo.toFixed(0) + "°");
+
+            var tempTwoLow = data.daily[2].temp.min;
+            $("#temp-low-2").html("Low Temp: " + tempTwoLow.toFixed(0) + "°");
+
+
+// weather info [3]
+
+            var dateThree = new Date(data.daily[3].dt * 1000)
+            var dateNameThree = days[dateThree.getDay()];
+            $("#card-date-3").html(dateNameThree);
+
+            var tempThree = data.daily[3].temp.max;
+            $("#temp-3").html("High Temp: " + tempThree.toFixed(0) + "°");
+
+            var tempThreeLow = data.daily[3].temp.min;
+            $("#temp-low-3").html("Low Temp: " + tempThreeLow.toFixed(0) + "°");
+
+// weather info [4]
+
+            var dateFour = new Date(data.daily[4].dt * 1000)
+            var dateNameFour = days[dateFour.getDay()];
+            $("#card-date-4").html(dateNameFour);
+
+            var tempFour = data.daily[4].temp.max;
+            $("#temp-4").html("High Temp: " + tempFour.toFixed(0) + "°");
+
+            var tempFourLow = data.daily[4].temp.min;
+            $("#temp-low-4").html("Low Temp: " + tempFourLow.toFixed(0) + "°");
+
+
+
+        });
+
+
+
+        //map for current city
+
+        // mapboxgl.accessToken = MAPBOX_KEY;
+        // const map = new mapboxgl.Map({
+        //     container: 'map', // container ID
+        //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        //     center: [-98.4936, 29.4241],
+        //     zoom: 11.7 // starting zoom
+        // });
+
+    });
+
+
+</script>
+
+</body>
+</html>
