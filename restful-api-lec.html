@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful API Requests</title>
+</head>
+<body>
+<script>
+
+    const API_URL = 'https://acoustic-little-chive.glitch.me/minerals';
+
+    // Get request
+
+    let getAllMinerals = () => {
+        //don't need a parameter
+      return fetch(API_URL).then(response => response.json());
+    }
+
+  getAllMinerals().then(data => console.log(data)).catch(error => console.error(error));
+
+
+    // get request by id
+  let getMineralById = (id) => {
+      return fetch(`${API_URL}/${id}`).then(response => response.json())
+  }
+
+  getMineralById(3).then(data => console.log(data)).catch(err => console.error(err));
+
+
+  //edit a post
+    //put vs patch
+    // put - requires you to resubmit the entire entity(resubmit everything)
+    //patch - only edits properties that currently exist in the posted entity (only sends the property that is being edited)
+
+    let editMineral = (mineral) => {
+        let options = {
+            method: 'PUT',
+            headers: {
+                //Content-Type : this tells the server what type of data we are sending with our request. when interacting with a json api, this will usually be application/json.    needs to be in the form of a string
+                'Content-Type': 'application/json',
+                //authorization would also go here if needed
+
+            },
+            // a request body - additional content that is included along with our request, usually a json string that represents the resource(s) being created/modified. stringify means you're going to turn js object into json string before sending it to server
+            body: JSON.stringify(mineral)
+        }
+
+        return fetch(`${API_URL}/${mineral.id}`, options).then(response => response.json());
+    }
+
+    //If you use the put method, and only send and object with 2 of the existing properties, the entire object gets replaced, leaving you with only the properties you passed.
+
+    // name, color , etc comes from the api
+
+    let editedMineral = {
+        name: 'olivine',
+        color: 'yellow green',
+        hardness: 7,
+        cleavage: 'brittle',
+        luster: "vitreous",
+        id: 5
+    }
+
+editMineral(editedMineral).then(data => console.log(data)).catch(err => console.error(err));
+
+
+    //Post Request - adding
+
+    let regulusRock = {
+        name: 'regulus',
+        color: 'blue',
+        hardness: 10,
+        cleavage: 'conchoidal',
+        luster: 'metallic',
+        id: 6,
+    }
+
+    let createMineral = (mineral) => {
+        //options inside function as a built-in vs selecting one from the outside
+        let options = {
+            method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(mineral)
+        }
+        return fetch(API_URL, options).then(response => response.json()).catch(err => console.error(err));
+    }
+
+
+    //commented this out so it doesn't post a duplicate for regulus rock, regulus rock was already created in the post request, console.logging would just post it again
+    createMineral(regulusRock).then(data => console.log(data));
+
+
+    //delete request
+
+    let deleteMineral = (id) => {
+        let options = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        // / id is to change the end point
+        return fetch(`${API_URL}/${id}`, options).then(response => response.json()).catch(err => console.error(err));
+    }
+
+    deleteMineral(2);
+
+
+</script>
+</body>
+</html>
