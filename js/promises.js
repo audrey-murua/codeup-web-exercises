@@ -7,7 +7,7 @@
 //solution
 
 const userLastCommit = (user) => {
-    return fetch(`https://api.github.com/users/${user}/events`, {headers: {'Authorization': `token ${GITHUB_KEY}`}})
+    return fetch(`https://api.github.com/users/${user}/events`, {headers: {'Authorization': "GITHUB_KEY"}})
         .then(resp => resp.json())
         .then(data => {
             console.log(data);
